@@ -1,0 +1,14 @@
+Package: GOSTlibs
+Type: Package
+Title: The first GOST package
+Version: 0.1.0
+Authors: Bo Pieter Johannes Andree <bandree@worldbank.org>, Benjamin P Stewart <bstewart@worldbank.org>
+AuthorAffiliation: World Bank
+Description: This is an example package that we build during one of the Show Intel meetings at GOST - Worldbank, Washington D.C. The code is functional and allows you to Jitter GPS locations.
+Depends: rgdal, rgeos
+License: MIT
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1.9000
+ByteCompile: TRUE
+
