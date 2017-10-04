@@ -148,7 +148,7 @@ Go ahead and copy paste the following above the jitterSurveyPoints function code
 #' @param urbanField string indicating the column that contains a binary indicator that defines urban and rural points. 1 = Rural
 #' @param urbanDist (optional) numeric distance (in metres) to jitter urban points. Default is 2000m
 #' @param ruralDist (optional) numeric distance (in metres) to jitter rural points. Default is 5000m
-#' @param ruralDistFar (optional) numeric distance (in metres) to jitter 1% of rural points. Default is 10000m
+#' @param ruralDistFar (optional) numeric distance (in metres) to jitter 1\% of rural points. Default is 10000m
 #' @export
 #' @examples
 #'
@@ -171,7 +171,8 @@ Go ahead and copy paste the following above the jitterSurveyPoints function code
 ```
 
 The first line is a short title the describes your function. It is followed by a general description of the function and its use case. 
-Arguments are declared uisng ```@param argumentName argumentDescription```. After you have declared all the arguments, end with ```@export```. 
+Arguments are declared uisng ```@param argumentName argumentDescription```. After you have declared all the arguments, end with ```@export```. It is important that you escape special symbols. For example, write ```1\%```.
+
 Preferably, but optionally, add a working example in R code. As you can see, anything after ```@examples``` is just plain R code including comments, with an additional ```#'``` in front of it.
 
 ## Adding data to your package
