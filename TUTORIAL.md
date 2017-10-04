@@ -110,7 +110,9 @@ The important part of R packages is documentation. R packages follow a certain s
 The basic layout to document a function is
 - Title
 - General description
-- Parameter description. 
+- Parameter description 
+- Keywords appropiate for the function
+- A description of the return object
 - An export command
 - An example on how to use the function
 
