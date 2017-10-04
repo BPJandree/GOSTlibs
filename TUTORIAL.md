@@ -94,64 +94,19 @@ jitterSurveyPoints <- function(inPts, inAdmin, urbanField="Id",
 
     return(inPts)
 }
-```
-
-
-This function will "Jitter" the GPS locations of a household survey, and move them randomly within an administrative boundary. This is done to preserve anonimity, and it is similar to how AirBnb and Cragslist place the locations of a sublet on the map to provide only an approximate location without revealing someones true location.
-
-Once the file is in the R folder of your package directory, R Studio will recognize it. In the Fles tab of the lower right pane, you can open the R folder and click on jitterSurveyPoints.R 
-This will open the file into the R Studio editor tab. Go ahead and open it.
-
-
-## Documenting your code
-
-The important part of R packages is documentation. R packages follow a certain standard documentation guideline. This always starts with ```#'```
- 
-The basic layout to document a function is
-- Title
-- General description
-- Parameter description 
-- Keywords appropiate for the function
-- A description of the return object
-- An export command
-- An example on how to use the function
-
-Documentation of a function is always placed above the R code of that function.
-
-As we shall see later, we can also add data to package. The outline to document data is
-
-- Title
-- General description
-- A line to indicate that we document data
-- A description of usage
-- A description of the format
-- Keywords appropiate for the data
-
-Documentation of data is always followed by 
-```NULL```
-
-
-
-Go ahead and copy paste the following above the jitterSurveyPoints function code.
-
-
-
-```
-#' This is a function to jitter GPS survey points
+#' This is a function to jitter GPS survey points.
 #'
-#' Following DHS guidelines, survey GPS locations need to be purposefully displaced (jittered)
-#' before disseminating in order to preserve annonymity. Each point is displaced based on its urban/rural
-#' definition. All points must stay within the administrative 2 boundaries in which they originate
-#'
-#' @param inPts SpatialPointsDataFrame containing the points to be jittered
-#' @param inAdmin SpatialPolygonsDataFrame containing administrative boundaries. Jittered points are not allowed to be moved outside their original administrative boundary
-#' @param urbanField string indicating the column that contains a binary indicator that defines urban and rural points. 1 = Rural
-#' @param urbanDist (optional) numeric distance (in metres) to jitter urban points. Default is 2000m
-#' @param ruralDist (optional) numeric distance (in metres) to jitter rural points. Default is 5000m
-#' @param ruralDistFar (optional) numeric distance (in metres) to jitter 1\% of rural points. Default is 10000m
+#' Following DHS guidelines, survey GPS locations need to be purposefully displaced (jittered) before disseminating in order to preserve annonymity. Each point is displaced based on its urban/rural definition. All points must stay within the administrative 2 boundaries in which they originate.
+#' @param inPts SpatialPointsDataFrame containing the points to be jittered.
+#' @param inAdmin SpatialPolygonsDataFrame containing administrative boundaries. Jittered points are not allowed to be moved outside their original administrative boundary.
+#' @param urbanField (optional) string indicating the column that contains a binary indicator that defines urban and rural points. 1 = Rural.
+#' @param urbanDist (optional) numeric distance (in metres) to jitter urban points. Default is 2000m.
+#' @param ruralDist (optional) numeric distance (in metres) to jitter rural points. Default is 5000m.
+#' @param ruralDistFar (optional) numeric distance (in metres) to jitter 1\% of rural points. Default is 10000m.
+#' @keywords jittering
+#' @return A spatial data frame with randomly jittered coordinates
 #' @export
 #' @examples
-#'
 #' # First load the input points. You can use the example data:
 #'
 #' data("inPts")
