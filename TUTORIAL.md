@@ -143,7 +143,7 @@ In R you can load data that is provided in packages by first opening the package
 
 To add example data, first download the RawSampleData from the [RawSampleData subfolder on my github](https://github.com/BPJandree/GOSTlibs/tree/master/RawSampleData).
 
-Save it somewhere on your computer, and load it to your R environment. Then save the objects as .rda files into the data folder in your R package.
+Save it somewhere on your computer, and load it to your R environment. Then save the objects as .rda files into the data folder in your R package. .rda files contain an in-memory representation of an object. This allows you to save any file type and add it to your package.
 
 ```
 # install and load packages to handle spatial data frames
