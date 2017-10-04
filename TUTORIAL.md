@@ -235,7 +235,7 @@ will show the documentation that we have added to our datasets.
 
 R package usually have a general description too. In the package directory you will find a file called DESCRIPTION.
 Open it with an editor, and add additional information. The DESCRIPTION file accepts only very specific formatting, and if your format incorrect you will have trouble building your package.
-My description file looks like:
+OMy description file looks like:
 
 ```
 Package: GOSTlibs
@@ -285,5 +285,12 @@ You will find your manual in Rpackages, it is useful to make a subfolder within 
 ## Distributing your package
 
 Finally, you may want to share your package with others. If you're confident about your code and it's use, you can submit it to CRAN and go through a review and get your package on the CRAN server. I more lightweight alternative is to upload your package to your github.
+
+Once you have your package in github, you can install it from anywhere. You can install my version of GOSTlibs by running:
+
+```
+library(devtools)
+install_github("BPJandree/GOSTlibs")
+```
 
 
