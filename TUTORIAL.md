@@ -141,7 +141,7 @@ data("inAdmin")
 In R you can load data that is provided in packages by first opening the package to which the data belongs to, and then running the ```data()``` command. We will have to add our datasets to the package.
 
 
-To add example data, first download the RawSampleData from the [RawSampleData subfolder on my github]()
+To add example data, first download the RawSampleData from the [RawSampleData subfolder on my github](https://github.com/BPJandree/GOSTlibs/tree/master/RawSampleData).
 
 Save it somewhere on your computer, and load it to your R environment. Then save the objects as .rda files into the data folder in your R package.
 
