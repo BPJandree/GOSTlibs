@@ -278,7 +278,7 @@ Then run:
 ```
 system("R CMD Rd2pdf GOSTlibs")
 ```
-you will find your manual in Rpackages, it is usefull to make a subfolder within your package named "vignette" and place the PDF in there.
+You will find your manual in Rpackages, it is useful to make a subfolder within your package named "vignette" and place the PDF in there. If you want to create a new manual, delete the old one.
 
 
 
