@@ -1,4 +1,4 @@
-This totorial was written for the Geospatial Operations Support Team (GOST) of the Worldbank, Washington D.C. The example can be followed by anybody that is interested in building R packages. 
+This tutorial was written for the Geospatial Operations Support Team (GOST) of the World Bank, Washington D.C. The example can be followed by anybody that is interested in building R packages.
 
 
 # BUILDING AN R PACKAGE
@@ -6,7 +6,7 @@ This totorial was written for the Geospatial Operations Support Team (GOST) of t
 ## Requirements
 
 First you will need to download and install [R studio](https://www.rstudio.com/products/rstudio/download/#download)
-Also, download and install LaTex. For example, download and isntall [TexStudio](http://www.texstudio.org/)
+Also, download and install LaTex. For example, download and install [TexStudio](http://www.texstudio.org/)
 This is a LaTex editor. Upon running it first time, it will suggest several LaTex distributions with download links.
 Then, download and install [Rtools](https://cran.r-project.org/bin/windows/Rtools/). Rtools manages compilers that are needed when you use C-type code, or when you want to compile your manuals into a PDF.
 
@@ -24,7 +24,7 @@ library("roxygen2")
 
 After that, click on Build -> Configure Build tools
 activate:
-Generate Documentaiotn with Roxygen, activate all sub options
+Generate Documentation with Roxygen, activate all sub options
 click OK
 
 This tells R studio to create manual files when building a package, which is what we want to do later on.
@@ -41,7 +41,7 @@ R studio will generate several files and subdirectories. Important for us is the
 ?library
 ```
 
-By default there will be a Hello World example in both the R and man fodler. we're going to delete that and replace it with some actual code that Ben wrote.
+By default there will be a Hello World example in both the R and man folder. We're going to delete that and replace it with some actual code that Ben wrote.
 
 Go ahead and create a file called jitterSurveyPoints.R in the R folder in your package directory and copy paste the following code in it:
 
@@ -138,7 +138,7 @@ data("inPts")
 data("inAdmin")
 ```
 
-In R you can load data that is provided in packages by first opening the packge to which the data belongs to, and then running the ```data()``` command. We will have to add our datasets to the package.
+In R you can load data that is provided in packages by first opening the package to which the data belongs to, and then running the ```data()``` command. We will have to add our datasets to the package.
 
 
 To add example data, first download the RawSampleData from the [RawSampleData subfolder on my github]()
@@ -164,7 +164,7 @@ save(inPts, file="C:/Users/.../GOSTlibs/data/inPts.rda")
 
 Similar to the jitterSurveyPoints function, we will need to add some documentation to the data. 
 
-It is good practice to make a singlue R file for every function and everydataset in your package. This makes maintaining the package a lot easer, especially when multiple people start collaborating and suggesting edits to your package code. Having a single R file allows them to focus on code  that they work with, and not get destracted by lengthy code blocks that perhaps are only useful to others.
+It is good practice to make a single R file for every function and every dataset in your package. This makes maintaining the package a lot easer, especially when multiple people start collaborating and suggesting edits to your package code. Having a single R file allows them to focus on code  that they work with, and not get distracted by lengthy code blocks that perhaps are only useful to others.
 
 Create one file called inPts.R in the R folder of your package, and paste the following code into it:
 
@@ -201,9 +201,9 @@ NULL
 # Building your R package
 
 
-Once you have the R code with your function and documentaion in place, we can build and load your package into your R environment. Go to the right upper panel in R studio and click Build an Reload under the build tab.
+Once you have the R code with your function and documentation in place, we can build and load your package into your R environment. Go to the right upper panel in R studio and click Build an Reload under the build tab.
 
-Because we have told Rstudio to use roxygen to build documentaion, R studio will create several documentation filed. If you want to rebuild the documentation without rebuilding and reloading your package, you can use:
+Because we have told Rstudio to use roxygen to build documentation, R studio will create several documentation filed. If you want to rebuild the documentation without rebuilding and reloading your package, you can use:
 
 ```
 devtools::document()
@@ -267,7 +267,7 @@ This makes sure that your R code is byte-compiled when you build your package. C
 
 
 Finally you want to have a pdf manual containing all the documentation and meta descriptions. To do this, we need to run a shell command within the package directory.
-It is convienient to run this from the R terminal.
+It is convenient to run this from the R terminal.
 
 First, set your working directory to the folder that contains your package. For example, if your package is located in a folder called Rpackages, with GOSTlibs as the package folder within Rpackages, run:
 
