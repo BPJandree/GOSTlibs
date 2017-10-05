@@ -98,8 +98,38 @@ jitterSurveyPoints <- function(inPts, inAdmin, urbanField="Id",
 ```
 
 
+This function will "Jitter" the GPS locations of a household survey, and move them randomly within an administrative boundary. This is done to preserve anonimity, and it is similar to how AirBnb and Cragslist place the locations of a sublet on the map to provide only an approximate location without revealing someones true location.
 
-## Documenting your functions
+## Documenting your code
+
+The important part of R packages is documentation. R packages follow a certain standard documentation guideline. This always start with ```#'```
+ 
+The basic layout to document a function is
+- Title
+- General description
+- Parameter description
+- Keywords appropiate for the function
+- Description of the return object
+- An export command
+- An example on how to use the function
+
+Documentation of a function is always placed above the R code of the function that it documents.
+
+As we shall see later, we can also add data to package. The outline to document data is
+
+- Title
+- General description
+- A line to indicate that we document data
+- A description of usage
+- A description of the format
+- Keywords appropiate for the data
+
+Documentation of data is always followed by 
+```NULL```
+
+
+
+Go ahead and copy paste the following code above the ```jitterSurveyPoints``` function.
 
 
 ```
