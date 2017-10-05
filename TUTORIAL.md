@@ -1,4 +1,4 @@
-.This tutorial was written for the Geospatial Operations Support Team (GOST) of the World Bank, Washington D.C. The example can be followed by anybody that is interested in building R packages.
+This tutorial was written for the Geospatial Operations Support Team (GOST) of the World Bank, Washington D.C. The example can be followed by anybody that is interested in building R packages.
 
 
 # BUILDING AN R PACKAGE
@@ -178,7 +178,7 @@ data("inPts")
 data("inAdmin")
 ```
 
-In R you can load data that is provided in packages by first opening the package to which the data belongs to, and then running the ```data()``` command. We will have to add our datasets to the package.
+In R you can load data that is provided in packages by first loading the package, using ```library()```, to which the data belongs to, and then running the ```data()``` command. For example you can load ```cars``` by typing ```data(cars)``` in your terminal, and obtain a description of the data by typing ```?cars```. We will now add our datasets to the package.
 
 
 To add example data, first download the RawSampleData from the [RawSampleData subfolder on my github](https://github.com/BPJandree/GOSTlibs/tree/master/RawSampleData).
