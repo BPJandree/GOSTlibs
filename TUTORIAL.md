@@ -3,6 +3,10 @@ This tutorial was written for the Geospatial Operations Support Team (GOST) of t
 
 # BUILDING AN R PACKAGE
 
+## Troubleshooting
+
+If you are unsure, you can always inspect my arrangement of files by inspecting my [GOSTlib](https://github.com/BPJandree/GOSTlibs) directory layout and its content. If you follow all the steps correctly you will end up with a similar directory, only the RawSampleData folder is not a part of the package and only contains some files needed to follow this tutorial. 
+
 ## Requirements
 
 First you will need to download and install [R studio](https://www.rstudio.com/products/rstudio/download/#download)
