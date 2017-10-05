@@ -1,4 +1,4 @@
-This tutorial was written for the Geospatial Operations Support Team (GOST) of the World Bank, Washington D.C. The example can be followed by anybody that is interested in building R packages.
+.This tutorial was written for the Geospatial Operations Support Team (GOST) of the World Bank, Washington D.C. The example can be followed by anybody that is interested in building R packages.
 
 
 # BUILDING AN R PACKAGE
@@ -6,7 +6,7 @@ This tutorial was written for the Geospatial Operations Support Team (GOST) of t
 ## Requirements
 
 First you will need to download and install [R studio](https://www.rstudio.com/products/rstudio/download/#download)
-Also, download and install LaTex. For example, download and install [TexStudio](http://www.texstudio.org/)
+Also, download and install LaTex. For example, download and install [TexStudio](http://www.texstudio.org/).
 This is a LaTex editor. Upon running it first time, it will suggest several LaTex distributions with download links.
 Then, download and install [Rtools](https://cran.r-project.org/bin/windows/Rtools/). Rtools manages compilers that are needed when you use C-type code, or when you want to compile your manuals into a PDF.
 
