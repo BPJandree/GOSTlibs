@@ -94,6 +94,15 @@ jitterSurveyPoints <- function(inPts, inAdmin, urbanField="Id",
 
     return(inPts)
 }
+
+```
+
+
+
+## Documenting your functions
+
+
+```
 #' This is a function to jitter GPS survey points.
 #'
 #' Following DHS guidelines, survey GPS locations need to be purposefully displaced (jittered) before disseminating in order to preserve annonymity. Each point is displaced based on its urban/rural definition. All points must stay within the administrative 2 boundaries in which they originate.
@@ -124,6 +133,7 @@ jitterSurveyPoints <- function(inPts, inAdmin, urbanField="Id",
 #'
 #' newPts = jitterSurveyPoints(inPts, inAdmin)
 ```
+
 
 The first line is a short title the describes your function. It is followed by a general description of the function and its use case. 
 Arguments are declared uisng ```@param argumentName argumentDescription```. After you have declared all the arguments, end with ```@export```. It is important that you escape special symbols. For example, write ```1\%```.
@@ -198,7 +208,7 @@ Create a second file called inAdmin.R in the R folder of your package and paste 
 NULL
 ```
 
-# Building your R package
+## Building your R package
 
 
 Once you have the R code with your function and documentation in place, we can build and load your package into your R environment. Go to the right upper panel in R studio and click Build an Reload under the build tab.
