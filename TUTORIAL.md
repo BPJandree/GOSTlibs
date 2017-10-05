@@ -126,7 +126,7 @@ As we shall see later, we can also add data to package. The outline to document 
 
 Documentation of data is always followed by 
 ```NULL```
-
+in the place where you would otherwise have the R code for your function.
 
 
 Go ahead and copy paste the following code above the ```jitterSurveyPoints``` function.
