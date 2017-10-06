@@ -128,9 +128,9 @@ As we shall see later, we can also add data to package. The outline to document 
 - A description of the format
 - Keywords appropiate for the data
 
-Documentation of data is always followed by 
+Documentation of data can be followed by 
 ```NULL```
-in the place where you would otherwise have the R code for your function.
+in the place where you would otherwise have the R code for your function. This makes it clear that we are not documenting any real R code.
 
 
 Go ahead and copy paste the following code above the ```jitterSurveyPoints``` function.
