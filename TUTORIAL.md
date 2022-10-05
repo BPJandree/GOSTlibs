@@ -1,7 +1,6 @@
-This tutorial was written for the Geospatial Operations Support Team (GOST) of the World Bank, Washington D.C. The example can be followed by anybody that is interested in building R packages.
-
-
 # BUILDING AN R PACKAGE
+
+This tutorial was written for the Geospatial Operations Support Team (GOST) of the World Bank, Washington D.C. The example can be followed by anybody that is interested in building R packages.
 
 ## Troubleshooting
 
@@ -17,7 +16,7 @@ Then, download and install [Rtools](https://cran.r-project.org/bin/windows/Rtool
 
 ## Setting up R studio
 
-Open R studio and install and load devtools and roxygen2
+Open R studio and install and load devtools and roxygen2.
 
 ```
 install.packages("devtools")
@@ -47,7 +46,7 @@ R studio will generate several files and subdirectories. Important for us is the
 
 By default there will be a Hello World example in both the R and man folder. We're going to delete that and replace it with some actual code that Ben wrote.
 
-Go ahead and create a file called jitterSurveyPoints.R in the R folder in your package directory and copy paste the following code in it:
+Go ahead and create a file called ```jitterSurveyPoints.R``` in the R folder in your package directory and copy paste the following code in it:
 
 ```
 jitterSurveyPoints <- function(inPts, inAdmin, urbanField="Id",
@@ -64,9 +63,9 @@ jitterSurveyPoints <- function(inPts, inAdmin, urbanField="Id",
         return(c(x + dX, y + dY))
     }
     ### TODO ###
-    # 1. There shold be some parameter checking here
-    #   a. the projection for the dataset has to be measured in metres
-    #   b. the script creates two coluns newX and newY, which should be checked first
+    # 1. There should be some parameter checking here
+    #   a. the projection for the dataset has to be measured in meters
+    #   b. the script creates two columns newX and newY, which should be checked first
 
     # loop through all the points in the input dataset
     inPts$newX = 0
@@ -102,7 +101,7 @@ jitterSurveyPoints <- function(inPts, inAdmin, urbanField="Id",
 ```
 
 
-This function will "Jitter" the GPS locations of a household survey, and move them randomly within an administrative boundary. This is done to preserve anonimity, and it is similar to how AirBnb and Cragslist place the locations of a sublet on the map to provide only an approximate location without revealing someones true location.
+This function will "Jitter" the GPS locations of a household survey, and move them randomly within an administrative boundary. This is done to preserve anonymity, and it is similar to how Airbnb and Craigslist place the locations of a sublet on the map to provide only an approximate location without revealing someones true location.
 
 ## Documenting your code
 
@@ -112,7 +111,7 @@ The basic layout to document a function is
 - Title
 - General description
 - Parameter description
-- Keywords appropiate for the function
+- Keywords appropriate for the function
 - Description of the return object
 - An export command
 - An example on how to use the function
@@ -126,7 +125,7 @@ As we shall see later, we can also add data to package. The outline to document 
 - A line to indicate that we document data
 - A description of usage
 - A description of the format
-- Keywords appropiate for the data
+- Keywords appropriate for the data
 
 Documentation of data can be followed by 
 ```NULL```
@@ -139,13 +138,13 @@ Go ahead and copy paste the following code above the ```jitterSurveyPoints``` fu
 ```
 #' This is a function to jitter GPS survey points.
 #'
-#' Following DHS guidelines, survey GPS locations need to be purposefully displaced (jittered) before disseminating in order to preserve annonymity. Each point is displaced based on its urban/rural definition. All points must stay within the administrative 2 boundaries in which they originate.
+#' Following DHS guidelines, survey GPS locations need to be purposefully displaced (jittered) before disseminating in order to preserve anonymity. Each point is displaced based on its urban/rural definition. All points must stay within the administrative 2 boundaries in which they originate.
 #' @param inPts SpatialPointsDataFrame containing the points to be jittered.
 #' @param inAdmin SpatialPolygonsDataFrame containing administrative boundaries. Jittered points are not allowed to be moved outside their original administrative boundary.
 #' @param urbanField (optional) string indicating the column that contains a binary indicator that defines urban and rural points. 1 = Rural.
-#' @param urbanDist (optional) numeric distance (in metres) to jitter urban points. Default is 2000m.
-#' @param ruralDist (optional) numeric distance (in metres) to jitter rural points. Default is 5000m.
-#' @param ruralDistFar (optional) numeric distance (in metres) to jitter 1\% of rural points. Default is 10000m.
+#' @param urbanDist (optional) numeric distance (in meters) to jitter urban points. Default is 2000m.
+#' @param ruralDist (optional) numeric distance (in meters) to jitter rural points. Default is 5000m.
+#' @param ruralDistFar (optional) numeric distance (in meters) to jitter 1\% of rural points. Default is 10000m.
 #' @keywords jittering
 #' @return A spatial data frame with randomly jittered coordinates
 #' @export
@@ -170,7 +169,7 @@ Go ahead and copy paste the following code above the ```jitterSurveyPoints``` fu
 
 
 The first line is a short title the describes your function. It is followed by a general description of the function and its use case. 
-Arguments are declared uisng ```@param argumentName argumentDescription```. After you have declared all the arguments, end with ```@export```. It is important that you escape special symbols. For example, write ```1\%```.
+Arguments are declared using ```@param argumentName argumentDescription```. After you have declared all the arguments, end with ```@export```. It is important that you escape special symbols. For example, write ```1\%```.
 
 Preferably, but optionally, add a working example in R code. As you can see, anything after ```@examples``` is just plain R code including comments, with an additional ```#'``` in front of it.
 
@@ -206,11 +205,11 @@ save(inPts, file="C:/Users/.../GOSTlibs/data/inPts.rda")
 
 ```
 
-Similar to the jitterSurveyPoints function, we will need to add some documentation to the data. 
+Similar to the ```jitterSurveyPoints``` function, we will need to add some documentation to the data. 
 
 It is good practice to make a single R file for every function and every dataset in your package. This makes maintaining the package a lot easer, especially when multiple people start collaborating and suggesting edits to your package code. Having a single R file allows them to focus on code  that they work with, and not get distracted by lengthy code blocks that perhaps are only useful to others.
 
-Create one file called inPts.R in the R folder of your package, and paste the following code into it:
+Create one file called ```inPts.R``` in the R folder of your package, and paste the following code into it:
 
 ```
 #' A sample points dataset for testing point jittering
@@ -226,10 +225,10 @@ Create one file called inPts.R in the R folder of your package, and paste the fo
 NULL
 ```
 
-Create a second file called inAdmin.R in the R folder of your package and paste the following code into it:
+Create a second file called ```inAdmin.R``` in the R folder of your package and paste the following code into it:
 
 ```
-#' A sample administraive boundaries dataset describing admin2 boundaries in Pakistan
+#' A sample administrative boundaries dataset describing admin2 boundaries in Pakistan
 #'
 #' To load the sample data, data(inAdmin)
 #'
@@ -263,7 +262,7 @@ To see if it worked, you can write
 ?jitterSurveyPoints
 ```
 
-In the right bottom panel, R studio will now show the documentation that we have created. Go ahead and compare it to the code that we have written above our function in jitterSurveyPoints.R
+In the right bottom panel, R studio will now show the documentation that we have created. Go ahead and compare it to the code that we have written above our function in ```jitterSurveyPoints.R```
 Similarly
 ```
 ?inPts
@@ -279,7 +278,7 @@ will show the documentation that we have added to our datasets.
 
 R package usually have a general description too. In the package directory you will find a file called DESCRIPTION.
 Open it with an editor, and add additional information. The DESCRIPTION file accepts only very specific formatting, and if your format incorrect you will have trouble building your package.
-OMy description file looks like:
+My description file looks like:
 
 ```
 Package: GOSTlibs
@@ -288,7 +287,7 @@ Title: The first GOST package
 Version: 0.1.0
 Authors: Bo Pieter Johannes Andree <bandree@worldbank.org>, Benjamin P Stewart <bstewart@worldbank.org>
 AuthorAffiliation: World Bank
-Description: This is an example package that we build during one of the Show Intel meetings at GOST - Worldbank, Washington D.C. The code is functional and allows you to Jitter GPS locations.
+Description: This is an example package that we build during one of the Show Intel meetings at GOST - World Bank, Washington D.C. The code is functional and allows you to Jitter GPS locations.
 Depends: rgdal, rgeos
 License: MIT
 Encoding: UTF-8
@@ -328,13 +327,11 @@ You will find your manual in Rpackages, it is useful to make a subfolder within 
 
 ## Distributing your package
 
-Finally, you may want to share your package with others. If you're confident about your code and it's use, you can submit it to CRAN and go through a review and get your package on the CRAN server. I more lightweight alternative is to upload your package to your github.
+Finally, you may want to share your package with others. If you're confident about your code and it's use, you can submit it to CRAN and go through a review and get your package on the CRAN server. I more lightweight alternative is to upload your package to your GitHub.
 
-Once you have your package in github, you can install it from anywhere. You can install my version of GOSTlibs by running:
+Once you have your package in GitHub, you can install it from anywhere. You can install my version of GOSTlibs by running:
 
 ```
 library(devtools)
 install_github("BPJandree/GOSTlibs")
 ```
-
-
